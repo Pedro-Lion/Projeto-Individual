@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 
 /* bloco para personalizar a página toda */
 * {
   padding: 0; /* Remove espaçamento interno */
   margin: 0; /* Remove espaçamento externo */
   box-sizing: border-box; /* Define a box model para incluir borda e padding no tamanho do elemento */
-  font-family: "Poppins", sans-serif; /* Define a fonte padrão para o site */
+  font-family: "EB Garamond", serif; /* Define a fonte padrão para o site */
 }
 
 
@@ -34,7 +34,7 @@
   --oxford-blue: #002147;
   --space-cadet: #1d2951ee;
   --complementar: #005e96;
-  --backgroud-transparent: #00000088;
+  --backgroud-transparent: #000000bb;
   --bg-gradient: linear-gradient(to left,  rgb(0, 0, 69), #030320, #1a1a40, #1b1b37, #252537);
   
 
@@ -84,7 +84,10 @@ img {
 
 
 
-
+.logo-nome{
+  display: flex;
+  align-items: center;
+}
 
 
 /* Bloco de estilização para seções e rodapé */
@@ -134,6 +137,7 @@ header .navbar {
   gap: 50px;
   max-width: 100%; /* Define a largura máxima da navbar */
   justify-content: space-between;
+  max-height: 100px;
 
 }
 .navbar .nav-logo {
@@ -186,7 +190,7 @@ header .navbar {
 }
 /* Define a imagem de fundo para a seção */
 #section-image {
-  width: 100%;
+  width: auto;
   height: auto;
   background-image: url('../imgs/group-having-fun.png');
   background-repeat: no-repeat;
@@ -200,9 +204,10 @@ header .navbar {
 
 .Titulo1{
   display: flex;
-  color: var(--white-color); /* Define a cor do texto como branco */
+  color: #f4e8c4; /* Define a cor do texto como branco */
   align-items:left;
-  font-size: var(--font-size-xxl);
+
+  font-size: 3.5rem;
 }
 /* Estiliza o título da seção */
 .hero-section .hero-details .title {
@@ -425,17 +430,17 @@ header .navbar {
   /* Aplica animação e transformação ao passar o mouse sobre o item (card),
      fazendo-o "saltar" levemente */
   .menu-item:hover {
-    animation: bounce 0.5s ease; /* Animação de "pulo" com duração de 0.5s */
+    animation: bounce .5s ease; /* Animação de "pulo" com duração de 0.5s */
     transform: translateY(-10px); /* Move o card para cima 10px ao passar o mouse */
   }
   /* Define a animação bounce para simular um pulo. O card sobe 15px na metade
      da animação e retorna à posição original */
   @keyframes bounce {
-    0%, 100% {
+    from {
       transform: translateY(0); /* Posição inicial e final do card */
     }
-    50% {
-      transform: translateY(-15px); /* O card sobe 15px no meio da animação */
+    to {
+      transform: translateY(-10px); /* O card sobe 15px no meio da animação */
     }
   } 
   /* Estiliza as imagens dentro dos cards, definindo largura e altura de 100px,
@@ -704,6 +709,8 @@ header .navbar {
     flex-direction: column-reverse;
   }
 }
+
+
 
 /* Segundo bloco de respansividade se max width 640px */
 /* @media screen and (max-width: 640px) {
