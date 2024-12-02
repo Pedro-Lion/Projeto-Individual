@@ -7,32 +7,32 @@
   box-sizing: border-box; /* Define a box model para incluir borda e padding no tamanho do elemento */
   font-family: "Poppins", sans-serif; /* Define a fonte padrão para o site */
 }
-    :root {
-       /* Cores */
-  --white-color: #f5f5f5; /* Cor branca */
-  --dark-color: #030320; /* Cor escura */
-  --primary-color: #251605; /* Cor primária */
-  --secondary-color: #c59506; /* Cor secundária */
-  --secondary-color-variacao: #dfa805;
-  --light-pink-color: #faf4f5; /* Cor rosa claro */ 
-  --medium-gray-color: #ccc; /* Cinza médio */
-  --black-color: #000000;
-  --golden-yellow: #FFD700;
-  --warm-beige: #F5DEB3;
-  --soft-brown: #A0522D;
-  --dark-charcoal: #2F2F2F;
-  --cream-white: #f3f2db;
-  --amber-orange: #FFBF00;
-  --midnight-blue: #191970;
-  --dark-slate-blue: #483D8B;
-  --navy-blue: #000080;
-  --prussian-blue: #003153;
-  --indigo-dye: #00416A;
-  --oxford-blue: #002147;
-  --space-cadet: #1d2951ee;
-  --complementar: #005e96;
-  --backgroud-transparent: #00000088;
-  --bg-gradient: linear-gradient(to left,  rgb(0, 0, 69), #030320, #1a1a40, #1b1b37, #252537);
+:root {
+    /* Cores */
+    --white-color: #f5f5f5; /* Cor branca */
+    --dark-color: #0d2841; /* Cor escura */
+    --primary-color: #0d2841; /* Cor primária */
+    --secondary-color: #65b8c3; /* Cor secundária */
+    --secondary-color-variacao: #cdb97d;
+    --light-pink-color: #faf4f5; /* Cor rosa claro */ 
+    --medium-gray-color: #ccc; /* Cinza médio */
+    --black-color: #000000;
+    --golden-yellow: #FFD700;
+    --warm-beige: #F5DEB3;
+    --soft-brown: #A0522D;
+    --dark-charcoal: #2F2F2F;
+    --cream-white: #f3f2db;
+    --amber-orange: #FFBF00;
+    --midnight-blue: #191970;
+    --dark-slate-blue: #483D8B;
+    --navy-blue: #000080;
+    --prussian-blue: #003153;
+    --indigo-dye: #00416A;
+    --oxford-blue: #002147;
+    --space-cadet: #1d2951ee;
+    --complementar: #005e96;
+    --backgroud-transparent: #000000bb;
+    --bg-gradient: linear-gradient(to left,  rgb(0, 0, 69), #030320, #1a1a40, #1b1b37, #252537);
   
 
   /* Tamanhos de fonte */
@@ -169,7 +169,7 @@
         padding: 5px;
         width: 8    0px;
         border-radius: 3px;
-        background-color: #6d4816;
+        background-color: gray;
         text-align: center;
         color: #fdfde9;
         font-size: 0.8em;
