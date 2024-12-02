@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    padding: 30px;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+.form-group{
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+
+}
+
+.form-group label{
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.radio{
+    cursor: pointer;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    outline: none;
+    border: 2px solid blue;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.radio:hover{
+    opacity: 1;
+}
+
+.radio::before{
+    content: '';
+    position:absolute;
+    height: 15px;
+    width: 15px;
+    background: blue;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+}
+
+.radio:checked:before{
+    opacity: 1;
+}
+
+.radio:focus{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 1);
+}

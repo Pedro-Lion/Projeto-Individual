@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="./../css/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="shortcut icon" href="imgs/logo-removebg-preview.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/59e6ac5157.js" crossorigin="anonymous"></script>
+    
+
+</head>
+<body onload="listar()">
+    <!--HEADER-->
+    <header id="scroll-element">
+        <nav class="navbar">
+            <a href="#" class="nav-logo">
+                <div class="logo-nome">
+                    <img src="imgs/logo-removebg-preview.png" style="height: 100px; margin-top: 10px; width: auto; ">
+                    <h1 class="Titulo1">Filosofia Inata</h1>
+                </div>
+                <!-- <h1 class="Titulo1">Filosofia Inata</h1>-->
+            </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fas fa-times"></button>
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#menu" class="nav-link">Vertentes</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="cadastro-empresa.html" class="nav-link">Cadastro</a>
+                </li>
+            </ul>
+            <button id="menu-open-button" class="fas fa-bars"></button>
+        </nav>
+    </header>
+    <!--Mensagens de Ação-->
+    <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+          <span id="mensagem_erro"></span>
+        </div>
+      </div>
+
+    <!--Tela Cadastro-->
+    <div class="container">
+        <div class="content first-content">
+            <div class="first-column">
+                <h2 class="title title-welcome">Bem Vindo de Volta!</h2>
+                <p class="description description-primary">Se já possui um cadastro,</p>
+                <p class="description description-primary">Logue e veja seus resultados!</p>
+                <button id="Logar" class="btn btn-primary">Logar</button>
+            </div>
+            <div class="second-column">
+                <h2 class="title title-second">Crie Sua Conta!</h2>
+                <div class="social-media">
+                    <ul class="list-social-media">
+                        <a class="link-social-media" href="#">
+                            <li class="item-social-media">
+                                <i class="fa-brands fa-github"></i>
+                            </li>
+                        </a>
+                        <a class="link-social-media" href="#">
+                            <li class="item-social-media"><i class="fa-brands fa-linkedin"></i>
+                            </li>
+                        </a>
+                        <a class="link-social-media" href="#">
+                            <li class="item-social-media"><i class="fa-brands fa-instagram"></i>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+                <p class="description description-second">ou use seu email para criar uma conta:</p>
+                <form class="form">
+                    <label class="label-input" for="">
+                        <i class="fa-solid fa-user icon-modify"></i>
+                    <input type="text" placeholder="Nome" id="nome_input">
+                    </label>
+                    <label class="label-input" for="">
+                        <i class="fa-solid fa-envelope icon-modify"></i>
+                    <input type="text" placeholder="E-mail" id="email_input">
+                    </label>
+                    <label class="label-input" for="">
+                        <i class="fa-solid fa-lock icon-modify"></i>
+                    <input type="text" placeholder="Senha" id="senha_input"></label>
+                    <div id="div_erros_login"></div>
+                    <button onclick="cadastrar()" class="btn btn-second">Cadastrar</button>
+                </form>
+
+            </div>
+        </div>
+
+        <!--Tela Login-->
+        <div class="content second-content">
+            <div class="first-column">
+                <h2 class="title title-welcome">Olá amigo!</h2>
+                <p class="description description-primary">Realize seu Cadastro</p>
+                <p class="description description-primary">E faça o seu teste!</p>
+                <button id="Cadastrar" class="btn btn-primary">Cadastrar</button>
+            </div>
+            <div class="second-column">
+                <h2 class="title title-second">Entre na sua Conta!</h2>
+                <div class="social-media">
+                    <ul class="list-social-media">
+                        <a class="link-social-media" href="#">
+                            <li class="item-social-media">
+                                <i class="fa-brands fa-github"></i>
+                            </li>
+                        </a>
+                        <a class="link-social-media" href="#">
+                            <li class="item-social-media"><i class="fa-brands fa-linkedin"></i>
+                            </li>
+                        </a>
+                        <a class="link-social-media" href="#">
+                            <li class="item-social-media"><i class="fa-brands fa-instagram"></i>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+                <p class="description description-second">ou use seu email e senha para entrar:</p>
+                <form class="form">
+                    <label class="label-input" for="">
+                        <i class="fa-solid fa-envelope icon-modify"></i>
+                    <input type="text" placeholder="E-mail" id="input_email">
+                    </label>
+                    <label class="label-input" for="">
+                        <i class="fa-solid fa-lock icon-modify"></i>
+                    <input type="text" placeholder="Senha" id="input_senha"></label>
+                    <button class="btn btn-second">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+<script>
+
+    // Array para armazenar empresas cadastradas para validação de código de ativação 
+    let listaEmpresasCadastradas = [];
+  
+    function cadastrar() {
+      // aguardar();
+  
+      //Recupere o valor da nova input pelo nome do id
+      // Agora vá para o método fetch logo abaixo
+      var nomeVar = nome_input.value;
+      var emailVar = email_input.value;
+      var senhaVar = senha_input.value;
+      var cpfVar = cpf_input.value;
+      var codigoVar = "ED145B";
+      var idEmpresaVincular
+  
+      // Verificando se há algum campo em branco
+      if (
+        nomeVar == "" ||
+        emailVar == "" ||
+        senhaVar == "" ||
+        codigoVar == "" || cpfVar == ""
+      ) {
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML =
+          "(Mensagem de erro para todos os campos em branco)";
+  
+        finalizarAguardar();
+        return false;
+      } else {
+        setInterval(sumirMensagem, 5000);
+      }
+  
+      // Verificando se o código de ativação é de alguma empresa cadastrada
+      for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
+        if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
+          idEmpresaVincular = listaEmpresasCadastradas[i].id
+          console.log("Código de ativação válido.");
+          break;
+        } else {
+          cardErro.style.display = "block";
+          mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
+          finalizarAguardar();
+        }
+      }
+  
+      // Enviando o valor da nova input
+      fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          nomeServer: nomeVar,
+          cpfServer : cpfVar,
+          emailServer: emailVar,
+          senhaServer: senhaVar,
+          idEmpresaVincularServer: idEmpresaVincular
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+  
+          if (resposta.ok) {
+            cardErro.style.display = "block";
+  
+            mensagem_erro.innerHTML =
+              "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+  
+            setTimeout(() => {
+              window.location = "login.html";
+            }, "2000");
+  
+            limparFormulario();
+            finalizarAguardar();
+          } else {
+            throw "Houve um erro ao tentar realizar o cadastro!";
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+          finalizarAguardar();
+        });
+  
+      return false;
+    }
+  
+    // Listando empresas cadastradas 
+    function listar() {
+      fetch("/empresas/listar", {
+        method: "GET",
+      })
+        .then(function (resposta) {
+          resposta.json().then((empresas) => {
+            empresas.forEach((empresa) => {
+              listaEmpresasCadastradas.push(empresa);
+  
+              console.log("listaEmpresasCadastradas")
+              console.log(listaEmpresasCadastradas[0].codigo_ativacao)
+            });
+          });
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        });
+    }
+  
+    function sumirMensagem() {
+      cardErro.style.display = "none";
+    }
+  </script>
