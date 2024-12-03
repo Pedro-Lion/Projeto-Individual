@@ -30,11 +30,11 @@ app.use(cors());
 
 // Config das rotas
 app.use("/", indexRouter);
-app.use("/usuario", usuarioRouter);
+app.use("/usuarios", usuarioRouter);
 //app.use("/avisos", avisosRouter);
 //app.use("/medidas", medidasRouter);
 //app.use("/aquarios", aquariosRouter);
-app.use("/empresas", empresasRouter);
+//app.use("/empresas", empresasRouter);
 
 // Inicialização do servidor
 

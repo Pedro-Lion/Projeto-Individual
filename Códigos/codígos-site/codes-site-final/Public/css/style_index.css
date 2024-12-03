@@ -176,11 +176,11 @@ header .navbar {
 /* Configura a área de conteúdo da seção */
 .hero-section .section-content {
   display: flex; /* Usa flexbox para organizar o layout */
-  padding-top: 90px; /* Adiciona espaço no topo */
-  padding-left: 40px; /* Adiciona espaço à esquerda */
   align-items: center; /* Alinha verticalmente os itens ao centro */
   min-height: 96vh; /* Define a altura mínima da seção como 96% da tela */
-  justify-content: space-between; /* Coloca o máximo de espaço entre os itens */
+  /*justify-content: space-between;  Coloca o máximo de espaço entre os itens */
+ /* text-align: center;*/
+  
 }
 /* Define uma camada de transparência sobre o banner da seção */
 .bloco {
@@ -218,13 +218,13 @@ header .navbar {
 /* Estiliza o subtítulo logo abaixo do título */
 .hero-section .hero-details .subtitle {
   margin-top: 8px; /* Adiciona um pequeno espaço acima */
-  max-width: 45%; /* Limita a largura do subtítulo a 45% */
+  max-width: 100%; /* Limita a largura do subtítulo a 45% */
   font-size: var(--font-size-xxl); /* Define o tamanho do subtítulo */
   font-weight: var(--font-weight-semibold); /* Define o subtítulo como semi-negrito */
 }
 /* Estiliza a descrição da seção */
 .hero-section .hero-details .description {
-  max-width: 70%; /* A descrição ocupa no máximo 70% da largura */
+  max-width: 100%; /* A descrição ocupa no máximo 70% da largura */
   margin: 24px 0 40px; /* Define espaçamentos superior e inferior */
   font-size: var(--font-size-m); /* Tamanho médio da fonte para o texto */
 }
@@ -232,6 +232,7 @@ header .navbar {
 .hero-section .hero-details .buttons {
   display: flex; /* Usa flexbox para organizar os botões em linha */
   gap: 23px; /* Espaçamento entre os botões */
+  justify-content: center;
 }
 /* Estiliza cada botão individualmente */
 .hero-section .hero-details .button {
@@ -662,8 +663,6 @@ header .navbar {
   }
   .hero-section .section-content {
     text-align: center;
-    gap: 50px;
-    padding: 30px 20px 20px;
     justify-content: center;
     flex-direction: column-reverse;
   }

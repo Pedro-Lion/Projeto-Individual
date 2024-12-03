@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AquaTech | Simulador</title>
+
+    <script src="./js/sessao.js"></script>
+
+    <link rel="stylesheet" href="./simulador.css">
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="icon" href="./assets/icon/favicon2.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+
+<body>
+
+    <!--header inicio-->
+    <div class="header">
+        <div class="container">
+            <h1 class="titulo">AquaTech</h1>
+            <ul class="navbar">
+                <li>
+                    <a href="./index.html">Inicial</a>
+                </li>
+                <li class="agora">Simulador</li>
+                <li>|</li>
+                <li>
+                    <a href="./login.html">Login</a>
+                </li>
+                <li>
+                    <a href="./login.html">Cadastro</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- simulador inicio -->
+    <div class="simulador">
+        <div class="container">
+            <h2>Teste</h2>
+            <!--1 Estoicismo-->
+            <p>Devemos aceitar eventos fora do nosso controle com serenidade?<br>
+                <div class="wrapper">
+                    <div class="form-group">
+                        <input class="radio" name="estoicismo1" onclick="analisar('estoicismo1',5)" type="radio" id="radio1">
+                        <label for="radio1">Concordo Totalmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" name="estoicismo1" onclick="analisar('estoicismo1',3)"type="radio" id="radio2">
+                        <label for="radio2">Concordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" name="estoicismo1" onclick="analisar('estoicismo1',2)"type="radio" id="radio3">
+                        <label for="radio3">Neutro</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" name="estoicismo1" onclick="analisar('estoicismo1',1)"type="radio" id="radio3">
+                        <label for="radio3">Discordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" name="estoicismo1" onclick="analisar('estoicismo1',0)"type="radio" id="radio4">
+                        <label for="radio3">Discordo Totalmente</label>
+                    </div>
+                </div>
+            </p>
+
+            <p>Você acredita que emoções como raiva e tristeza podem ser controladas pela razão?<br>
+                <div class="wrapper">
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('estoicismo2',5)" name="estoicismo2" type="radio" id="radio1">
+                        <label for="radio1">Concordo Totalmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('estoicismo2',3)" name="estoicismo2" type="radio" id="radio2">
+                        <label for="radio2">Concordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('estoicismo2',2)" name="estoicismo2" type="radio" id="radio3">
+                        <label for="radio3">Neutro</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('estoicismo2',1)" name="estoicismo2" type="radio" id="radio3">
+                        <label for="radio3">Discordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('estoicismo2',0)" name="estoicismo2" type="radio" id="radio3">
+                        <label for="radio3">Discordo Totalmente</label>
+                    </div>
+                </div>
+            </p>
+
+            <!--2 Existencialismo-->
+            <p>Concorda que a vida não possui um significado intrínseco e que cabe a cada um criá-lo?<br>
+                <div class="wrapper">
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('existencialismo1',5)" name="existencialismo1" type="radio" id="radio1">
+                        <label for="radio1">Concordo Totalmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('existencialismo1',3)" name="existencialismo1" type="radio" id="radio2">
+                        <label for="radio2">Concordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('existencialismo1',2)" name="existencialismo1" type="radio" id="radio3">
+                        <label for="radio3">Neutro</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('existencialismo1',1)" name="existencialismo1" type="radio" id="radio3">
+                        <label for="radio3">Discordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('existencialismo1',0)" name="existencialismo1" type="radio" id="radio3">
+                        <label for="radio3">Discordo Totalmente</label>
+                    </div>
+                </div>
+            </p>
+
+
+            <p>Você acredita que as escolhas definem quem somos, mesmo em situações adversas?<br>
+                <div class="wrapper">
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('existencialismo2',5)"  name="existencialismo2" type="radio" id="radio1">
+                        <label for="radio1">Concordo Totalmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('existencialismo2',3)"  name="existencialismo2" type="radio" id="radio2">
+                        <label for="radio2">Concordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('existencialismo2',2)"  name="existencialismo2" type="radio" id="radio3">
+                        <label for="radio3">Neutro</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('existencialismo2',1)"  name="existencialismo2"  type="radio" id="radio3">
+                        <label for="radio3">Discordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('existencialismo2',0)"  name="existencialismo2"  type="radio" id="radio3">
+                        <label for="radio3">Discordo Totalmente</label>
+                    </div>
+                </div>
+            </p>
+
+            <!--3 Racionalismo-->
+            <p>Você acredita que a razão deve prevalecer sobre as emoções na tomada de decisões?<br>
+                <div class="wrapper">
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('racionalismo1',5)" name="racionalismo1" type="radio" id="radio1">
+                        <label for="radio1">Concordo Totalmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('racionalismo1',3)" name="racionalismo1" type="radio" id="radio2">
+                        <label for="radio2">Concordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('racionalismo1',2)" name="racionalismo1" type="radio" id="radio3">
+                        <label for="radio3">Neutro</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('racionalismo1',1)" name="racionalismo1"  type="radio" id="radio3">
+                        <label for="radio3">Discordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('racionalismo1',0)" name="racionalismo1"  type="radio" id="radio3">
+                        <label for="radio3">Discordo Totalmente</label>
+                    </div>
+                </div>
+            </p>
+
+            <p>Acredita que podemos descobrir verdades universais por meio da lógica?<br>
+                <div class="wrapper">
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('racionalismo2',5)" name="racionalismo2" value="3" type="radio" id="radio1">
+                        <label for="radio1">Concordo Totalmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('racionalismo2',3)" name="racionalismo2" value="1" type="radio" id="radio2">
+                        <label for="radio2">Concordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('racionalismo2',2)" name="racionalismo2" value="0" type="radio" id="radio3">
+                        <label for="radio3">Neutro</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('racionalismo2',1)" name="racionalismo2" value="-1" type="radio" id="radio3">
+                        <label for="radio3">Discordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('racionalismo2',0)" name="racionalismo2" value="-3" type="radio" id="radio3">
+                        <label for="radio3">Discordo Totalmente</label>
+                    </div>
+                </div>
+            </p>
+
+            <!--4 Epicurismo-->
+            <p>Você acredita que a felicidade está na busca por prazeres simples e moderados?<br>
+                <div class="wrapper">
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('epicurismo1',5)" name="epicurismo1" value="5" type="radio" id="radio1">
+                        <label for="radio1">Concordo Totalmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('epicurismo1',3)" name="epicurismo1" value="3" type="radio" id="radio2">
+                        <label for="radio2">Concordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('epicurismo1',2)" name="epicurismo1" value="2" type="radio" id="radio3">
+                        <label for="radio3">Neutro</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('epicurismo1',1)" name="epicurismo1" value="1" type="radio" id="radio3">
+                        <label for="radio3">Discordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('epicurismo1',0)" name="epicurismo1" value="0" type="radio" id="radio3">
+                        <label for="radio3">Discordo Totalmente</label>
+                    </div>
+                </div>
+            </p>
+
+            <p>Concorda que evitar o sofrimento é mais importante do que buscar o prazer intenso?<br>
+                <div class="wrapper">
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('epicurismo2',5)" name="epicurismo2" value="5" type="radio" id="radio1">
+                        <label for="radio1">Concordo Totalmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('epicurismo2',3)" name="epicurismo2" value="3" type="radio" id="radio2">
+                        <label for="radio2">Concordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('epicurismo2',2)" name="epicurismo2" value="2"  type="radio" id="radio3">
+                        <label for="radio3">Neutro</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('epicurismo2',1)" name="epicurismo2" value="1" type="radio" id="radio3">
+                        <label for="radio3">Discordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('epicurismo2',0)" name="epicurismo2" value="0" type="radio" id="radio3">
+                        <label for="radio3">Discordo Totalmente</label>
+                    </div>
+                </div>
+            </p>
+
+            <!--5 Empirismo -->
+            <p>Você acredita que a experiência prática é mais confiável do que teorias abstratas?<br>
+                <div class="wrapper">
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('empirismo1',5)" name="empirismo1" type="radio" id="radio1">
+                        <label for="radio1">Concordo Totalmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('empirismo1',3)" name="empirismo1" type="radio" id="radio2">
+                        <label for="radio2">Concordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('empirismo1',2)" name="empirismo1" type="radio" id="radio3">
+                        <label for="radio3">Neutro</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('empirismo1',1)" name="empirismo1" type="radio" id="radio3">
+                        <label for="radio3">Discordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('empirismo1',0)" name="empirismo1" type="radio" id="radio3">
+                        <label for="radio3">Discordo Totalmente</label>
+                    </div>
+                </div>
+            </p>
+
+            <p>O aprendizado deve estar baseado no que podemos observar e experimentar?<br>
+                <div class="wrapper">
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('empirismo2',5)" name="empirismo2" type="radio" id="radio1">
+                        <label for="radio1">Concordo Totalmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('empirismo2',3)" name="empirismo2" type="radio" id="radio2">
+                        <label for="radio2">Concordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('empirismo2',2)" name="empirismo2" type="radio" id="radio3">
+                        <label for="radio3">Neutro</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('empirismo2',1)" name="empirismo2" type="radio" id="radio3">
+                        <label for="radio3">Discordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('empirismo2',0)" name="empirismo2" type="radio" id="radio3">
+                        <label for="radio3">Discordo Totalmente</label>
+                    </div>
+                </div>
+            </p>
+
+            <!--6 Humanismo -->
+            <p>Concorda que a moralidade deve ser baseada em valores humanos e não em dogmas religiosos?<br>
+                <div class="wrapper">
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('humanismo1',5)" name="humanismo1" type="radio" id="radio1">
+                        <label for="radio1">Concordo Totalmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('humanismo1',3)" name="humanismo1" type="radio" id="radio2">
+                        <label for="radio2">Concordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('humanismo1',2)" name="humanismo1" type="radio" id="radio3">
+                        <label for="radio3">Neutro</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('humanismo1',1)" name="humanismo1" type="radio" id="radio3">
+                        <label for="radio3">Discordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('humanismo1',0)" name="humanismo1" type="radio" id="radio3">
+                        <label for="radio3">Discordo Totalmente</label>
+                    </div>
+                </div>
+            </p>
+
+            <p>Você acredita que o ser humano é capaz de moldar seu próprio destino?<br>
+                <div class="wrapper">
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('humanismo2',5)" name="humanismo2" type="radio" id="radio1">
+                        <label for="radio1">Concordo Totalmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('humanismo2',3)" name="humanismo2" type="radio" id="radio2">
+                        <label for="radio2">Concordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('humanismo2',2)" name="humanismo2" type="radio" id="radio3">
+                        <label for="radio3">Neutro</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('humanismo2',1)" name="humanismo2" type="radio" id="radio3">
+                        <label for="radio3">Discordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('humanismo2',0)" name="humanismo2" type="radio" id="radio3">
+                        <label for="radio3">Discordo Totalmente</label>
+                    </div>
+                </div>
+            </p>
+
+            <!--7 Niilismo-->
+            <p>Você acredita que conceitos como moralidade e propósito são construções humanas sem valor absoluto?<br>
+                <div class="wrapper">
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('niilismo1',5)" name="niilismo1" type="radio" id="radio1">
+                        <label for="radio1">Concordo Totalmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('niilismo1',3)" name="niilismo1" type="radio" id="radio2">
+                        <label for="radio2">Concordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('niilismo1',2)" name="niilismo1" type="radio" id="radio3">
+                        <label for="radio3">Neutro</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('niilismo1',1)" name="niilismo1" type="radio" id="radio3">
+                        <label for="radio3">Discordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('niilismo1',0)" name="niilismo1" type="radio" id="radio3">
+                        <label for="radio3">Discordo Totalmente</label>
+                    </div>
+                </div>
+            </p>
+
+            <p>Concorda que a ausência de significado não implica necessariamente em pessimismo?<br>
+                <div class="wrapper">
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('niilismo2',5)" name="niilismo2" type="radio" id="radio1">
+                        <label for="radio1">Concordo Totalmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('niilismo2',3)" name="niilismo2" type="radio" id="radio2">
+                        <label for="radio2">Concordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('niilismo2',2)" name="niilismo2" type="radio" id="radio3">
+                        <label for="radio3">Neutro</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('niilismo2',1)" name="niilismo2" type="radio" id="radio3">
+                        <label for="radio3">Discordo Parcialmente</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="radio" onclick="analisar('niilismo2',0)" name="niilismo2" type="radio" id="radio3">
+                        <label for="radio3">Discordo Totalmente</label>
+                    </div>
+                </div>
+            </p>
+
+            <p><button onclick="enviar()">ENVIAR RESPOSTAS</button></p>
+
+
+        </div>
+    </div>
+    <!-- simulador fim -->
+
+    <!--footer inicio-->
+    <div class="footer">
+        <div class="container">
+            <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
+            <span class="version">v1.0.0</span>
+        </div>
+    </div>
+    <!--footer fim-->
+
+
+</body>
+
+</html>
+<script>
+    var estoicismo1 = 0
+    var estoicismo2 = 0
+
+    var existencialismo1 = 0
+    var existencialismo2 = 0
+
+    var racionalismo1 = 0
+    var racionalismo2 = 0
+    
+    var epicurismo1 = 0
+    var epicurismo2 = 0
+
+    var empirismo1 = 0
+    var empirismo2 = 0
+
+    var humanismo1 = 0
+    var humanismo2 = 0
+
+    var niilismo1 = 0
+    var niilismo2 = 0
+    
+    function analisar(pergunta, valor) {
+        if (pergunta === "estoicismo1") {
+            estoicismo1 = valor;
+        } else if (pergunta === "estoicismo2") {
+            estoicismo2 = valor;
+        } else if (pergunta === "existencialismo1") {
+            existencialismo1 = valor;
+        } else if (pergunta === "existencialismo2") {
+            existencialismo2 = valor;
+        } else if (pergunta === "racionalismo1") {
+            racionalismo1 = valor;
+        } else if (pergunta === "racionalismo2") {
+            racionalismo2 = valor;
+        } else if (pergunta === "epicurismo1") {
+            epicurismo1 = valor;
+        } else if (pergunta === "epicurismo2") {
+            epicurismo2 = valor;
+        } else if (pergunta === "empirismo1") {
+            empirismo1 = valor;
+        } else if (pergunta === "empirismo2") {
+            empirismo2 = valor;
+        } else if (pergunta === "humanismo1") {
+            humanismo1 = valor;
+        } else if (pergunta === "humanismo2") {
+            humanismo2 = valor;
+        } else if (pergunta === "niilismo1") {
+            niilismo1 = valor;
+        } else if (pergunta === "niilismo2") {
+            niilismo2 = valor;
+        }
+    }
+
+    function enviar(){
+        var estoicismo = estoicismo1 + estoicismo2
+        var existencialismo = existencialismo1 + existencialismo2
+        var racionalismo = racionalismo1 + racionalismo2
+        var epicurismo = epicurismo1 + epicurismo2
+        var empirismo = empirismo1 + empirismo2
+        var humanismo = humanismo1 + humanismo2
+        var niilismo = niilismo1 + niilismo2
+
+        var vetor = [estoicismo, existencialismo, racionalismo, epicurismo, empirismo, humanismo, niilismo]
+        var maiorValor = vetor[0]
+
+        for(i=0;i<vetor.length;i++){
+            if(vetor[i]>maiorValor){
+                maiorValor = vetor[i]
+            }
+        }
+    
+  
+      fetch("/usuarios/testeInserir", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          fkUsuarioServer: sessionStorage.ID_USUARIO,
+          maiorPontuacaoServer: maiorValor,
+          estoicismoServer: estoicismo,
+          existencialismoServer: existencialismo,
+          racionalismoServer: racionalismo,
+          epicurismoServer: epicurismo,
+          empirismoServer: empirismo,
+          humanismoServer: humanismo,
+          niilismoServer: niilismo
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+  
+          if (resposta.ok) {
+            console.log("teste bem sucedido")
+            window.location.href = "Dashboard.html"
+
+          } else {
+            throw "Houve um erro ao tentar realizar o cadastro!";
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        });
+  
+      return false;
+    }
+
+
+    
+    
+
+
+</script>

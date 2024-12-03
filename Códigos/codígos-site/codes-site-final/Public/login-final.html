@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="../Public/css/login-final.css">
+    <link rel="stylesheet" href="./css/login-final.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="shortcut icon" href="imgs/logo-removebg-preview.png" type="image/x-icon">
@@ -12,7 +12,7 @@
     
 
 </head>
-<body onload="listar()">
+<body>
     <!--HEADER-->
     <header id="scroll-element">
         <nav class="navbar">
@@ -82,7 +82,7 @@
                                 </ul>
                             </div>
                             <p class="description description-second">ou use seu email para criar uma conta:</p>
-                            <form class="form">
+                            <form class="form" onsubmit="return false">
                                 <label class="label-input" for="">
                                     <i class="fa-solid fa-user icon-modify"></i>
                                 <input type="text" placeholder="Nome" id="nome_input">
@@ -95,7 +95,7 @@
                                     <i class="fa-solid fa-lock icon-modify"></i>
                                 <input type="text" placeholder="Senha" id="senha_input"></label>
                                 <div id="div_erros_login"></div>
-                                <button onclick="cadastrar()" class="btn btn-second">Cadastrar</button>
+                                <button onclick="cadastro()" class="btn btn-second">Cadastrar</button>
                             </form>
             
                         </div>
@@ -129,7 +129,7 @@
                                 </ul>
                             </div>
                             <p class="description description-second">ou use seu email e senha para entrar:</p>
-                            <form class="form">
+                            <form class="form" onsubmit="return false">
                                 <label class="label-input" for="">
                                     <i class="fa-solid fa-envelope icon-modify"></i>
                                 <input type="text" placeholder="E-mail" id="input_email">
@@ -137,28 +137,41 @@
                                 <label class="label-input" for="">
                                     <i class="fa-solid fa-lock icon-modify"></i>
                                 <input type="text" placeholder="Senha" id="input_senha"></label>
-                                <button class="btn btn-second">Login</button>
+                                <button class="btn btn-second" onclick="login()">Login</button>
                             </form>
                         </div>
                     </div>
                 </div>
                 
-                 
-                  
+            
               </div>
              
           </div>
       </div>
   </section>
-    <script src="../Public/script/login-final.js"></script>
 </body>
 </html>
 <script>
 
+var logar = document.querySelector("#Logar")
+var cadastrar = document.querySelector("#Cadastrar")
+
+var body = document.querySelector("body")
+
+logar.addEventListener("click",function(){
+    body.className = "login-js";
+})
+
+cadastrar.addEventListener("click",function(){
+    body.className = "cadastro-js";
+})
+
+
     // Array para armazenar empresas cadastradas para validação de código de ativação 
     let listaEmpresasCadastradas = [];
-  
-    function cadastrar() {
+
+
+    function cadastro() {
       // aguardar();
   
       //Recupere o valor da nova input pelo nome do id
@@ -166,39 +179,10 @@
       var nomeVar = nome_input.value;
       var emailVar = email_input.value;
       var senhaVar = senha_input.value;
-      var cpfVar = cpf_input.value;
-      var codigoVar = "ED145B";
-      var idEmpresaVincular
   
       // Verificando se há algum campo em branco
-      if (
-        nomeVar == "" ||
-        emailVar == "" ||
-        senhaVar == "" ||
-        codigoVar == "" || cpfVar == ""
-      ) {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML =
-          "(Mensagem de erro para todos os campos em branco)";
-  
-        finalizarAguardar();
-        return false;
-      } else {
-        setInterval(sumirMensagem, 5000);
-      }
   
       // Verificando se o código de ativação é de alguma empresa cadastrada
-      for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
-        if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
-          idEmpresaVincular = listaEmpresasCadastradas[i].id
-          console.log("Código de ativação válido.");
-          break;
-        } else {
-          cardErro.style.display = "block";
-          mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
-          finalizarAguardar();
-        }
-      }
   
       // Enviando o valor da nova input
       fetch("/usuarios/cadastrar", {
@@ -210,10 +194,8 @@
           // crie um atributo que recebe o valor recuperado aqui
           // Agora vá para o arquivo routes/usuario.js
           nomeServer: nomeVar,
-          cpfServer : cpfVar,
           emailServer: emailVar,
-          senhaServer: senhaVar,
-          idEmpresaVincularServer: idEmpresaVincular
+          senhaServer: senhaVar
         }),
       })
         .then(function (resposta) {
@@ -225,45 +207,64 @@
             mensagem_erro.innerHTML =
               "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
   
-            setTimeout(() => {
-              window.location = "login.html";
-            }, "2000");
+              body.className = "login-js";
+            
   
-            limparFormulario();
-            finalizarAguardar();
           } else {
             throw "Houve um erro ao tentar realizar o cadastro!";
           }
         })
         .catch(function (resposta) {
           console.log(`#ERRO: ${resposta}`);
-          finalizarAguardar();
         });
   
       return false;
     }
   
     // Listando empresas cadastradas 
-    function listar() {
-      fetch("/empresas/listar", {
-        method: "GET",
-      })
-        .then(function (resposta) {
-          resposta.json().then((empresas) => {
-            empresas.forEach((empresa) => {
-              listaEmpresasCadastradas.push(empresa);
-  
-              console.log("listaEmpresasCadastradas")
-              console.log(listaEmpresasCadastradas[0].codigo_ativacao)
-            });
-          });
-        })
-        .catch(function (resposta) {
-          console.log(`#ERRO: ${resposta}`);
-        });
-    }
   
     function sumirMensagem() {
       cardErro.style.display = "none";
     }
+
+    function login() {
+    const emailVar = input_email.value;
+    const senhaVar = input_senha.value;
+
+    if (emailVar === "" || senhaVar === "") {
+      alert("Por favor, preencha todos os campos em branco.");
+      return false;
+    }
+
+    fetch("/usuarios/autenticar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        emailServer: emailVar,
+        senhaServer: senhaVar
+      })
+    })
+      .then(function (resposta){
+        if (resposta.ok) {
+          resposta.json().then(function (json){
+            sessionStorage.EMAIL_USUARIO = json.email;
+            sessionStorage.NOME_USUARIO = json.nome;
+            sessionStorage.ID_USUARIO = json.id;
+
+            alert("Bem-Vindo!");
+
+            window.location.href = "simulador.html";
+            // setTimeout(() => {
+            //   window.location = "./Dashboard.html";
+            // }, 1000);
+          });
+        } else {
+          alert("Houve um erro ao tentar realizar o login!");
+        }
+      })
+      .catch((erro) => console.log("Erro:", erro));
+  }
+
   </script>
